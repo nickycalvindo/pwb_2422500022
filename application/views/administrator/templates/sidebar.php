@@ -59,12 +59,10 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="<?=  base_url('admin/logout') ?>" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Logout
-              </p>
-            </a>
+              <a href="<?= base_url('index.php/administrator/Admin_auth_controller/logout') ?>" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Logout</p>
+              </a>
           </li>
         </ul>
       </nav>
