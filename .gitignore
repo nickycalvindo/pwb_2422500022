@@ -1,0 +1,17 @@
+# OS
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/
+
+# Logs
+application/logs/*
+!application/logs/index.html
+
+# Cache
+application/cache/*
+!application/cache/index.html
+
+# Session
+application/cache/sessions/*
