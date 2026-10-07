@@ -15,3 +15,8 @@ application/cache/*
 
 # Session
 application/cache/sessions/*
+
+# Folder backup (jangan di-commit)
+backup_pertemuan4/
+backup_final_pertemuan4/
+backup_pertemuan5_6/

@@ -39,27 +39,27 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Starter Pages
+                Master
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="<?= base_url('admin/kategori') ?>" class="nav-link <?= (strpos(uri_string(), 'admin/kategori') === 0) ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
+                  <p>Kategori</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?= base_url('admin/produk') ?>" class="nav-link <?= (strpos(uri_string(), 'admin/produk') === 0) ? 'active' : '' ?>">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
+                  <p>Produk</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-              <a href="<?= base_url('index.php/administrator/Admin_auth_controller/logout') ?>" class="nav-link">
+              <a href="<?= base_url('admin/logout') ?>" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>Logout</p>
               </a>
