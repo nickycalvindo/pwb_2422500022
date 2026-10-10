@@ -16,6 +16,16 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `pwb_2422500022`
+--
+
+/*!40000 DROP DATABASE IF EXISTS `pwb_2422500022`*/;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `pwb_2422500022` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+
+USE `pwb_2422500022`;
+
+--
 -- Table structure for table `administrator`
 --
 
@@ -81,7 +91,7 @@ CREATE TABLE `produk` (
   `harga` int(11) NOT NULL,
   `stok` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_produk`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +100,7 @@ CREATE TABLE `produk` (
 
 LOCK TABLES `produk` WRITE;
 /*!40000 ALTER TABLE `produk` DISABLE KEYS */;
-INSERT INTO `produk` VALUES (4,'Baju Koko Dewasa','Baju koko panjang dan pendek',10,60000,10);
+INSERT INTO `produk` VALUES (6,'Kemeja Kasual Hitam Pria','Kemeja lengan pendek warna hitam ',2,145000,9),(8,'Dress Wanita Putih','Dress putih tanpa lengan',16,210000,7);
 /*!40000 ALTER TABLE `produk` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +116,7 @@ CREATE TABLE `produk_gambar` (
   `nama_gambar` varchar(100) DEFAULT NULL,
   `produk_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_gambar`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -115,9 +125,13 @@ CREATE TABLE `produk_gambar` (
 
 LOCK TABLES `produk_gambar` WRITE;
 /*!40000 ALTER TABLE `produk_gambar` DISABLE KEYS */;
-INSERT INTO `produk_gambar` VALUES (9,'produk-4-0.png',4);
+INSERT INTO `produk_gambar` VALUES (15,'produk-8-1791627157-0.jpg',8),(23,'produk-6-1791630735-11.jpg',6);
 /*!40000 ALTER TABLE `produk_gambar` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'pwb_2422500022'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -128,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-07 13:07:34
+-- Dump completed on 2026-10-10 18:38:30

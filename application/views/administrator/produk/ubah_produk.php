@@ -26,6 +26,11 @@
           <div class="card">
             <div class="card-body">
               <p class="card-text">
+
+                <?php if ($this->session->flashdata('message')) : ?>
+                  <?= $this->session->flashdata('message') ?>
+                <?php endif ?>
+
                 <form method="post" enctype="multipart/form-data">
 
                   <div class="mb-3">
@@ -72,10 +77,11 @@
                   <?php if (count($list_gambar) > 0) : ?>
                     <div class="row mb-3">
                       <?php foreach ($list_gambar as $gambar) : ?>
-                        <div class="col-lg-3">
-                          <div class="card" style="width: 18rem;">
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                          <div class="card h-100">
                             <img src="<?= base_url('uploads/produk/') . $gambar['nama_gambar'] ?>" class="card-img-top">
-                            <div class="card-body d-grid">
+                            <div class="card-body d-grid gap-2">
+                              <a href="<?= base_url('admin/produk/ubah_gambar/' . $gambar['id_gambar'] . '/' . $produk['id_produk']) ?>" class="btn btn-primary">Ubah</a>
                               <a href="<?= base_url('admin/produk/hapus_gambar/' . $gambar['id_gambar'] . '/' . $produk['id_produk']) ?>" class="btn btn-danger">Hapus</a>
                             </div>
                           </div>
