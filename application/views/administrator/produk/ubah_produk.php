@@ -65,8 +65,9 @@
                   </div>
 
                   <div class="mb-3">
-                    <label for="gambar_produk" class="form-label">Gambar Produk</label>
+                    <label for="gambar_produk" class="form-label">Tambah Gambar Produk</label>
                     <input class="form-control" type="file" id="gambar_produk" name="gambar_produk[]" multiple>
+                    <small class="text-muted">Biarkan kosong bila tidak ingin menambah gambar. Gambar yang dipilih akan ditambahkan ke galeri produk, bukan menggantikan gambar yang sudah ada.</small>
                   </div>
 
                   <?php

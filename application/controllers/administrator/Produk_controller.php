@@ -161,16 +161,13 @@ class Produk_controller extends CI_Controller
         $berhasil = TRUE;
 
         if ($ada_gambar_baru) {
-            // Upload gambar baru terlebih dahulu
+            // Upload gambar baru. Gambar lama TIDAK dihapus, jadi gambar baru
+            // justru bertambah ke galeri produk, bukan menggantinya.
             $gambar_baru = $this->__produk_gambar_upload_replacement($id);
 
-            if (count($gambar_baru) > 0) {
-                // Ada minimal satu gambar baru berhasil diupload,
-                // hapus gambar lama (file + record database)
-                $this->__hapus_semua_gambar_lama($id, $gambar_baru);
-            } else {
-                // Gambar baru dipilih tetapi gagal seluruhnya:
-                // gambar lama tidak dihapus, operasi dianggap gagal.
+            if (count($gambar_baru) === 0) {
+                // Gambar baru dipilih tetapi gagal seluruhnya diupload:
+                // tidak ada gambar yang bertambah, operasi dianggap gagal.
                 $berhasil = FALSE;
             }
         }

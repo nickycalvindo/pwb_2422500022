@@ -91,7 +91,7 @@ CREATE TABLE `produk` (
   `harga` int(11) NOT NULL,
   `stok` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_produk`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +100,7 @@ CREATE TABLE `produk` (
 
 LOCK TABLES `produk` WRITE;
 /*!40000 ALTER TABLE `produk` DISABLE KEYS */;
-INSERT INTO `produk` VALUES (6,'Kemeja Kasual Hitam Pria','Kemeja lengan pendek warna hitam ',2,145000,9),(8,'Dress Wanita Putih','Dress putih tanpa lengan',16,210000,7);
+INSERT INTO `produk` VALUES (6,'Kemeja Kasual Hitam Pria','Kemeja lengan pendek warna hitam',2,145000,9),(8,'Dress Wanita Putih','Dress putih tanpa lengan',16,210000,7);
 /*!40000 ALTER TABLE `produk` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,7 +116,7 @@ CREATE TABLE `produk_gambar` (
   `nama_gambar` varchar(100) DEFAULT NULL,
   `produk_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_gambar`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-10 18:38:30
+-- Dump completed on 2026-10-12 15:01:07
