@@ -16,16 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `pwb_2422500022`
---
-
-/*!40000 DROP DATABASE IF EXISTS `pwb_2422500022`*/;
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `pwb_2422500022` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-
-USE `pwb_2422500022`;
-
---
 -- Table structure for table `administrator`
 --
 
@@ -72,8 +62,65 @@ CREATE TABLE `kategori` (
 
 LOCK TABLES `kategori` WRITE;
 /*!40000 ALTER TABLE `kategori` DISABLE KEYS */;
-INSERT INTO `kategori` VALUES (1,'Baju Anak','Baju anak usia 1-5 tahun'),(2,'Baju Pria','Kemeja kasual pria'),(10,'Baju Koko','Baju koko untuk pria'),(16,'Baju Wanita','Dress Putih');
+INSERT INTO `kategori` VALUES (1,'Baju Anak','Baju anak usia 1-5 tahun'),(2,'Baju Pria','Kemeja kasual pria'),(16,'Baju Wanita','Dress Putih');
 /*!40000 ALTER TABLE `kategori` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `kota2422500022`
+--
+
+DROP TABLE IF EXISTS `kota2422500022`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `kota2422500022` (
+  `id_kota022` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kota022` varchar(50) DEFAULT NULL,
+  `jenis_kota022` varchar(30) DEFAULT NULL,
+  `provinsi022` varchar(10) DEFAULT NULL,
+  `status022` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`id_kota022`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `kota2422500022`
+--
+
+LOCK TABLES `kota2422500022` WRITE;
+/*!40000 ALTER TABLE `kota2422500022` DISABLE KEYS */;
+INSERT INTO `kota2422500022` VALUES (14,'Sungailiat','Kota','Bangka','Aktif'),(15,'Pemali','Kota','Bangka','Aktif');
+/*!40000 ALTER TABLE `kota2422500022` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pelanggan`
+--
+
+DROP TABLE IF EXISTS `pelanggan`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pelanggan` (
+  `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `nama_pelanggan` varchar(100) NOT NULL,
+  `telp_pelanggan` varchar(100) DEFAULT NULL,
+  `alamat` varchar(100) NOT NULL,
+  `kota` varchar(100) NOT NULL,
+  `kode_pos` int(11) NOT NULL,
+  `provinsi` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_pelanggan`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pelanggan`
+--
+
+LOCK TABLES `pelanggan` WRITE;
+/*!40000 ALTER TABLE `pelanggan` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pelanggan` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -91,7 +138,7 @@ CREATE TABLE `produk` (
   `harga` int(11) NOT NULL,
   `stok` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_produk`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,7 +147,7 @@ CREATE TABLE `produk` (
 
 LOCK TABLES `produk` WRITE;
 /*!40000 ALTER TABLE `produk` DISABLE KEYS */;
-INSERT INTO `produk` VALUES (6,'Kemeja Kasual Hitam Pria','Kemeja lengan pendek warna hitam',2,145000,9),(8,'Dress Wanita Putih','Dress putih tanpa lengan',16,210000,7);
+INSERT INTO `produk` VALUES (6,'Kemeja Kasual Hitam Pria','Kemeja lengan pendek warna hitam',2,145000,9),(8,'Dress Wanita Putih','Dress putih tanpa lengan',16,210000,7),(13,'Kaos Anak Putih','Kaos anak lengan pendek',1,50000,10);
 /*!40000 ALTER TABLE `produk` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,7 +163,7 @@ CREATE TABLE `produk_gambar` (
   `nama_gambar` varchar(100) DEFAULT NULL,
   `produk_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_gambar`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,13 +172,9 @@ CREATE TABLE `produk_gambar` (
 
 LOCK TABLES `produk_gambar` WRITE;
 /*!40000 ALTER TABLE `produk_gambar` DISABLE KEYS */;
-INSERT INTO `produk_gambar` VALUES (15,'produk-8-1791627157-0.jpg',8),(23,'produk-6-1791630735-11.jpg',6);
+INSERT INTO `produk_gambar` VALUES (15,'produk-8-1791627157-0.jpg',8),(23,'produk-6-1791630735-11.jpg',6),(42,'produk-13-0.jpg',13),(43,'produk-13-01.jpg',13);
 /*!40000 ALTER TABLE `produk_gambar` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping routines for database 'pwb_2422500022'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -142,4 +185,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-12 15:01:07
+-- Dump completed on 2026-11-10 10:08:24
