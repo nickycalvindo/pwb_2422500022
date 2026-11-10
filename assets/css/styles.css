@@ -1,0 +1,25 @@
+/* Gaya tambahan halaman pelanggan (Bootstrap 5) */
+
+body {
+    background-color: #f8f9fa;
+}
+
+.carousel-item img {
+    height: 380px;
+    object-fit: cover;
+}
+
+.card-img-top {
+    height: 240px;
+    object-fit: cover;
+}
+
+.text-small {
+    font-size: 0.9rem;
+}
+
+@media (max-width: 575.98px) {
+    .carousel-item img {
+        height: 220px;
+    }
+}
