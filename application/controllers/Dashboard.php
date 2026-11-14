@@ -16,8 +16,9 @@ class Dashboard extends CI_Controller {
         $data['title'] = 'Toko Online - PWB 2422500022';
         $data['gambar_model'] = $this->produk_gambar_model;
         $data['list_produk'] = $this->produk_model->get_all();
+        $data['list_kategori'] = $this->produk_kategori_model->get_all();
 
-        // Filter sederhana untuk form pencarian pada header (parameter ?q=)
+        // Filter pencarian produk untuk form search pada navbar (parameter ?q=).
         $keyword = $this->input->get('q');
         if (!empty($keyword)) {
             $hasil = array();

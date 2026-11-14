@@ -1,42 +1,50 @@
-<?php
-/**
- * Catatan: file template asli (index.html dari Classroom) tidak tersedia di mesin ini.
- * Bagian ini direkonstruksi: daftar produk diambil dari $list_produk yang dikirim Dashboard.
- */
-?>
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Produk</h4>
-    <?php if ($this->input->get('q')) : ?>
-        <span class="text-muted small">Hasil pencarian: <b><?= html_escape($this->input->get('q')) ?></b></span>
-    <?php endif ?>
-</div>
-
-<?php if (empty($list_produk)) : ?>
-    <div class="alert alert-info">Produk belum tersedia.</div>
-<?php else : ?>
-    <div class="row g-3 mb-5">
+     <style>
+        .diskon {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+    </style>
+    <div class="container mb-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <?php if (empty($list_produk)) : ?>
+        <div class="col-12">
+            <div class="alert alert-info mb-0">Produk belum tersedia.</div>
+        </div>
+        <?php else : ?>
         <?php foreach ($list_produk as $produk) : ?>
-            <?php
-            $gambar = $gambar_model->get_by_produk_id($produk['id_produk']);
-            ?>
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card h-100 shadow-sm">
-                    <?php if (!empty($gambar)) : ?>
-                        <img src="<?= base_url() ?>uploads/produk/<?= html_escape($gambar[0]['nama_gambar']) ?>"
-                            class="card-img-top" alt="<?= html_escape($produk['pd_nama']) ?>">
-                    <?php else : ?>
-                        <div class="card-img-top bg-secondary bg-opacity-25 d-flex align-items-center justify-content-center">
-                            <span class="text-muted small">Gambar belum tersedia</span>
+            <?php $gambar = $gambar_model->get_by_produk_id($produk['id_produk']); ?>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <a href="#">
+                        <?php if (!empty($gambar)) : ?>
+                        <img src="<?= base_url() ?>uploads/produk/<?= html_escape($gambar[0]['nama_gambar']) ?>" class="d-block w-100" alt="<?= html_escape($produk['pd_nama']) ?>">
+                        <?php else : ?>
+                        <img src="<?= base_url() ?>assets/template_frontend/running-shoe-371625_640.jpg" class="d-block w-100" alt="<?= html_escape($produk['pd_nama']) ?>">
+                        <?php endif ?>
+                    </a>
+                        <div class="diskon">
+                            <span class="badge bg-primary">Lebaran.20%</span>
                         </div>
-                    <?php endif ?>
-                    <div class="card-body d-flex flex-column">
-                        <h6 class="card-title mb-1"><?= html_escape($produk['pd_nama']) ?></h6>
-                        <div class="text-muted small mb-2"><?= html_escape($produk['kt_nama']) ?></div>
-                        <div class="fw-bold text-success mb-2">Rp <?= number_format($produk['harga'], 0, ',', '.') ?></div>
-                        <div class="small text-muted mt-auto">Stok: <?= (int) $produk['stok'] ?></div>
+                    <div class="card-body">
+                        <a href="#">
+                            <h5 class="card-title"><?= html_escape($produk['pd_nama']) ?></h5>
+                        </a>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="harga d-flex" style="color:dark">
+                                <small>Rp</small>
+                                <h4><?= number_format($produk['harga'], 0, ',', '.') ?></h4>
+                            </div>
+                            <small>
+                                <p><?= (int) $produk['stok'] ?> stok</p>
+                            </small>
+                        </div>
                     </div>
                 </div>
             </div>
         <?php endforeach ?>
+        <?php endif ?>
     </div>
-<?php endif ?>
+    <div class="container mt-4 text-center">
+        <button type="button" class="btn btn-outline-primary">Lihat Semua Produk</button>
+    </div>

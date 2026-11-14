@@ -1,48 +1,41 @@
-<?php
-/**
- * Catatan: file template asli (index.html dari Classroom) tidak tersedia di mesin ini.
- * Markup carousel direkonstruksi memakai Bootstrap 5 sesuai potongan materi
- * (class d-block w-100) dan gambar produk yang benar-benar ada di folder uploads.
- */
-?>
-<div id="carouselProduk" class="carousel slide mb-4" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselProduk" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselProduk" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselProduk" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="carousel container mb-3">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="<?= base_url() ?>assets/template_frontend/stylish-men-s-shoes-still-life-men-s-accessories.jpg" class="d-block w-100" alt="Shoes">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Shoes</h5>
+                        <p>Men's stylish shoes for every occasion.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="<?= base_url() ?>assets/template_frontend/analog-watch-1869928_960_720.jpg" class="d-block w-100" alt="Watch">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Luxury Watch</h5>
+                        <p>Perfect blend of style and precision.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="<?= base_url() ?>assets/template_frontend/alvaro-serrano-pFLNV4gkXsc-unsplash.jpg" class="d-block w-100" alt="Leather Bag">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Leather Bag</h5>
+                        <p>Elegant leather bags for your journey.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
-    <div class="carousel-inner rounded-3">
-        <div class="carousel-item active">
-            <img src="<?= base_url() ?>uploads/produk/produk-8-1791627157-0.jpg" class="d-block w-100"
-                alt="Dress Wanita Putih">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Dress Wanita Putih</h5>
-                <p>Koleksi terbaru untuk penampilan sehari-hari.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="<?= base_url() ?>uploads/produk/produk-6-1791630735-11.jpg" class="d-block w-100"
-                alt="Kemeja Kasual Hitam Pria">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Kemeja Kasual Hitam Pria</h5>
-                <p>Bahan nyaman untuk kegiatan harian.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="<?= base_url() ?>uploads/produk/produk-13-0.jpg" class="d-block w-100" alt="Kaos Anak Putih">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Kaos Anak Putih</h5>
-                <p>Pilihan tepat untuk buah hati.</p>
-            </div>
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduk" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Sebelumnya</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselProduk" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Berikutnya</span>
-    </button>
-</div>

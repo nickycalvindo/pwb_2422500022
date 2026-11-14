@@ -148,8 +148,6 @@ class Pelanggan_controller extends CI_Controller
         redirect(base_url());
     }
 
-    // TAMBAHAN TUGAS: menu Profil (tidak ada contoh kode pada materi PDF).
-    // Data profil selalu diambil dari session 'id', bukan dari parameter URL.
     public function profil()
     {
         if (!$this->session->has_userdata('pelanggan_login')) {
