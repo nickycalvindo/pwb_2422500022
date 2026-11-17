@@ -12,31 +12,31 @@
             <div class="alert alert-info mb-0">Produk belum tersedia.</div>
         </div>
         <?php else : ?>
-        <?php foreach ($list_produk as $produk) : ?>
-            <?php $gambar = $gambar_model->get_by_produk_id($produk['id_produk']); ?>
+        <?php foreach ($list_produk as $key => $value) : ?>
+            <?php $gambar = $gambar_model->get_by_produk_id($value['id_produk']); ?>
             <div class="col">
                 <div class="card shadow-sm">
-                    <a href="#">
+                    <a href="<?= base_url('produk/') . $value['id_produk'] ?>">
                         <?php if (!empty($gambar)) : ?>
-                        <img src="<?= base_url() ?>uploads/produk/<?= html_escape($gambar[0]['nama_gambar']) ?>" class="d-block w-100" alt="<?= html_escape($produk['pd_nama']) ?>">
+                        <img src="<?= base_url() ?>uploads/produk/<?= html_escape($gambar[0]['nama_gambar']) ?>" class="d-block w-100" alt="<?= html_escape($value['pd_nama']) ?>">
                         <?php else : ?>
-                        <img src="<?= base_url() ?>assets/template_frontend/running-shoe-371625_640.jpg" class="d-block w-100" alt="<?= html_escape($produk['pd_nama']) ?>">
+                        <img src="<?= base_url() ?>assets/template_frontend/running-shoe-371625_640.jpg" class="d-block w-100" alt="<?= html_escape($value['pd_nama']) ?>">
                         <?php endif ?>
                     </a>
                         <div class="diskon">
                             <span class="badge bg-primary">Lebaran.20%</span>
                         </div>
                     <div class="card-body">
-                        <a href="#">
-                            <h5 class="card-title"><?= html_escape($produk['pd_nama']) ?></h5>
+                        <a href="<?= base_url('produk/') . $value['id_produk'] ?>">
+                            <h5 class="card-title"><?= html_escape($value['pd_nama']) ?></h5>
                         </a>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="harga d-flex" style="color:dark">
                                 <small>Rp</small>
-                                <h4><?= number_format($produk['harga'], 0, ',', '.') ?></h4>
+                                <h4><?= number_format($value['harga'], 0, ',', '.') ?></h4>
                             </div>
                             <small>
-                                <p><?= (int) $produk['stok'] ?> stok</p>
+                                <p><?= (int) $value['stok'] ?> stok</p>
                             </small>
                         </div>
                     </div>
